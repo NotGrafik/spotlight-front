@@ -4,8 +4,15 @@ import { Button } from '@/components/ui/button'
 </script>
 
 <template>
-  <Button> lol
-  </Button>
+  <div class="flex w-full h-screen flex-col justify-end items-center" style="background-image: url('src/assets/background.png'); background-size: cover;">
+    <div class="flex flex-col items-center justify-center w-[90%] mb-10 gap-4">
+      <Button class="bg-white text-black w-full"> Se connecter
+      </Button>
+      <Button class="w-full">
+        S'inscire
+      </Button>
+    </div>
+  </div>
 </template>
 
 <style scoped>
