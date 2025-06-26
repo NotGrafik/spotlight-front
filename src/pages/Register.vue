@@ -63,7 +63,6 @@ const schema = z.object({
 
 
 const handleSubmit = () => {
-  // Réinitialiser les erreurs
   formErrors.fullName = ''
   formErrors.email = ''
   formErrors.password = ''
@@ -82,7 +81,7 @@ const handleSubmit = () => {
     return
   }
 
-  fetch('/api/auth/register', {
+  fetch('/api/register', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -90,7 +89,7 @@ const handleSubmit = () => {
     body: JSON.stringify({
       fullName: fullName.value,
       email: email.value,
-      passwordHash: password.value,
+      password: password.value,
     }),
   })
     .then((response) => {
