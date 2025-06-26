@@ -7,8 +7,8 @@ const props = defineProps<{
     event: {
         name: string;
         img: string;
-        start_date: Date;
-        end_date?: Date;
+        startDate: Date;
+        endDate?: Date;
         address: string;
     };
 }>();
@@ -25,7 +25,7 @@ const likeElement = () => {
 </script>
 <template>
 
-    <div class="flex w-full bg-red-50 h-28 relative">
+    <div class="flex w-full text-secondary h-28 relative">
         <div class="w-1/3 h-full">
             <img :src="props.event.img" alt="Event Image" class="w-full h-full object-cover">
         </div>
@@ -35,16 +35,16 @@ const likeElement = () => {
                 <Heart :id="props.event.name + '_heart'" class="absolute top-4 right-4 size-4 text-red-500 cursor-pointer" @click="likeElement" />
                 <div class="flex font-medium">
                     <p>
-                        {{ new Date(props.event.start_date).toLocaleString('fr-FR', { day:"2-digit", month: 'long' }) }}
+                        {{ new Date(props.event.startDate).toLocaleString('fr-FR', { day:"2-digit", month: 'long' }) }}
                     </p>
-                    <p v-if="props.event.end_date">
+                    <p v-if="props.event.endDate">
                         - 
-                        {{ new Date(props.event.end_date || "").toLocaleString('fr-FR', { day:"2-digit", month: 'long' }) }}
+                        {{ new Date(props.event.endDate || "").toLocaleString('fr-FR', { day:"2-digit", month: 'long' }) }}
 
                     </p>
                 </div>
             </div>
-            <div class="flex gap-2">
+            <div class="flex gap-2 item-center">
                 <MapPin class="size-4" />
                 {{ props.event.address }}
             </div>
