@@ -40,12 +40,9 @@ const plugin = Autoplay({
                     class="h-48 py-0"
                     :style="`background-image: url('${event.img}'); background-size: cover; background-position: center; min-height: 100%;`"
                 >
-                    <CardContent 
-                        class="flex aspect-square items-center justify-center p-6 h-full"
-                    >
-                        <div class="w-full text-white bg-opacity-50 p-2 rounded"
-                        >
-                            <h2 class="text-lg font-bold text-primary">{{ event.name }}</h2>
+                    <CardContent class="flex aspect-square items-center justify-center p-6 h-full">
+                        <div class="w-full text-white bg-opacity-50 p-2 rounded">
+                            <h2 class="text-lg font-bold ">{{ event.name }}</h2>
                         </div>
                     </CardContent>
                 </Card>

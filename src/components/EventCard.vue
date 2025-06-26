@@ -25,12 +25,16 @@ const likeElement = () => {
 </script>
 <template>
 
-    <div class="flex w-full text-secondary h-28 relative">
-        <div class="w-1/3 h-full">
-            <img :src="props.event.img" alt="Event Image" class="w-full h-full object-cover">
+    <div class="flex w-full text-secondary h-26 relative">
+        <div class="w-26 h-26 shrink-0 overflow-hidden rounded-md">
+            <img
+                :src="props.event.img"
+                alt="Event Image"
+                class="w-full h-full object-cover"
+            />
         </div>
         <div class="w-full pl-2 text-sm flex flex-col justify-between">
-            <div class="flex flex-col font-clash w-3/4" >
+            <div class="flex flex-col w-4/5" >
                 <h2 class="text-base font-bold">{{ props.event.name }}</h2>
                 <Heart :id="props.event.name + '_heart'" class="absolute top-4 right-4 size-4 text-red-500 cursor-pointer" @click="likeElement" />
                 <div class="flex font-medium">
