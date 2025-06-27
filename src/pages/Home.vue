@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import EventCard from "@/components/EventCard.vue";
 import EventCarousel from "@/components/EventCarousel.vue";
+import Navbar from "@/components/Navbar.vue";
 import { onMounted, ref } from "vue";
+
 
 let events = ref([]);
 
@@ -30,4 +32,5 @@ onMounted(() => {
             </div>
         </div>
     </div>
+    <Navbar />
 </template>
