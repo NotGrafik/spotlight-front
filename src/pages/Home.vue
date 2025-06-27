@@ -2,6 +2,7 @@
 import EventCard from "@/components/EventCard.vue";
 import EventCarousel from "@/components/EventCarousel.vue";
 import Navbar from "@/components/Navbar.vue";
+import Filterbar from "@/components/FilterBar.vue";
 import { onMounted, ref } from "vue";
 
 
@@ -23,9 +24,11 @@ onMounted(() => {
 </script>
 
 <template>
-    <div class="flex flex-col items-center justify-center w-full h-screen p-6 bg-foreground">
+    <div class="flex flex-col items-center justify-center w-full h-screen p-6 pt-12 bg-foreground">
         <div class="flex flex-col items-center w-full overflow-y-auto">
-            <h1 class="text-3xl font-bold text-primary-foreground mb-6">Upcoming Events</h1>
+            <div class="flex w-full">
+                <Filterbar class="text-primary-foreground mb-4"/>
+            </div>
             <EventCarousel :events="events" class="mb-6" />
             <h1 class="text-white text-lg mt-4">Today</h1>
             <div class="flex flex-col items-center justify-center w-full gap-4">
