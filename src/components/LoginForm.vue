@@ -14,9 +14,9 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 
 import { Eye, EyeClosed } from 'lucide-vue-next'
+import { goToPage } from '@/lib/utils';
 
 const route = useRoute();
-const router = useRouter();
 
 const email = ref('');
 const password = ref('');
@@ -45,7 +45,7 @@ const handleSubmit = async () => {
       if (Array.isArray(redirectPath)) {
         redirectPath = redirectPath[0] || '/home';
       }
-      router.push(redirectPath);
+      goToPage('home')
     } else if (response.status === 401) {
       formErrors.globalError = 'Email or password is incorrect';
     } else {
