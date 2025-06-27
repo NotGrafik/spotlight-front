@@ -27,6 +27,7 @@ onMounted(() => {
         <div class="flex flex-col items-center w-full overflow-y-auto">
             <h1 class="text-3xl font-bold text-primary-foreground mb-6">Upcoming Events</h1>
             <EventCarousel :events="events" class="mb-6" />
+            <h1 class="text-white text-lg mt-4">Today</h1>
             <div class="flex flex-col items-center justify-center w-full gap-4">
                 <EventCard v-for="event in events"  :event="event" />
             </div>
